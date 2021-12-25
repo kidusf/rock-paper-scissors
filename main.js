@@ -48,7 +48,11 @@ function playRound(playerSelection, computerSelection) {
     let playerPoints=0;
   let computerPoints=0;
   while(true){
-  const playerSelection = prompt("Enter your move");
+  let playerSelection = prompt("Enter your move");
+  while(playerSelection.toLowerCase()!= "rock" && playerSelection.toLowerCase()!= "scissors" && playerSelection.toLowerCase()!= "paper"){
+    console.log("Not a valid move");
+    playerSelection = prompt("Enter your move");
+  }
   const computerSelection = computerPlay();
   let result=playRound(playerSelection, computerSelection);
   console.log(result);
