@@ -45,32 +45,62 @@ function playRound(playerSelection, computerSelection) {
   }
   
   function game(){
-    let playerPoints=0;
-  let computerPoints=0;
-  while(true){
-  let playerSelection = prompt("Enter your move");
-  while(playerSelection.toLowerCase()!= "rock" && playerSelection.toLowerCase()!= "scissors" && playerSelection.toLowerCase()!= "paper"){
-    console.log("Not a valid move");
-    playerSelection = prompt("Enter your move");
-  }
-  const computerSelection = computerPlay();
-  let result=playRound(playerSelection, computerSelection);
-  console.log(result);
+  if(playerSelection!=undefined){
+    const computerSelection = computerPlay();
+    var result=playRound(playerSelection, computerSelection);
+    results.innerHTML=result;
   if(result=="Player Wins!"){
     playerPoints++;
   }
   if(result=="Computer Wins!"){
     computerPoints++;
   }
-  if(playerPoints>=5){
-    console.log("Player has won 5 rounds")
-    break;
+  if(computerPoints>=5 || playerPoints>=5){
+    if(computerPoints>=5){
+      results.innerHTML="Computer has won the game!"
+    }
+    else{
+      results.innerHTML="Player has won the game!"
+    }
+    playerPoints=0;
+    computerPoints=0;
   }
-  if(computerPoints>=5){
-    console.log("Computer has won 5 rounds")
-    break;
-  }
-  }
+  playerScore.innerHTML=playerPoints.toString();
+  cpuScore.innerHTML=computerPoints.toString();
 }
+  
+  }
+  var playerPoints=0;
+    var computerPoints=0;
+    var playerSelection;
+    var rockButton=document.getElementById("rock");
+    var playerScore=document.getElementById("player-score");
+    var cpuScore=document.getElementById("CPU-score");
+    var results=document.getElementById("result");
+    playerScore.innerHTML=playerPoints.toString();
+    cpuScore.innerHTML=computerPoints.toString();
+    rockButton.addEventListener("click", () => {
+      playerSelection="rock";
+      console.log(playerSelection);
+      game();
+      playerSelection=undefined;
+    });
+    var paperButton=document.getElementById("paper");
+    paperButton.addEventListener("click", () => {
+      playerSelection="paper";
+      console.log(playerSelection);
+      game();
+      playerSelection=undefined;
+    });
+    var scissorsButton=document.getElementById("scissors");
+    scissorsButton.addEventListener("click", () => {
+      playerSelection="scissors";
+      console.log(playerSelection);
+      game();
+      playerSelection=undefined;
+    });
 
-game();
+  
+
+  
+

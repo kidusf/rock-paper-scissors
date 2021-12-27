@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color:darksalmon;
+    color:darkred;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    align-self: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+.options, .scores{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.player, .CPU, .r, .p, .s{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid lavender;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 50px 100px;
+    position:relative;
+    background-color: orange;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+button{
+    justify-self: center;
+    color: white;
+}
+
+#player-score, #CPU-score{
+    background-color:linen;
+    border: 3px solid grey;
+    color:coral;
+    padding: 25px 50px;
+}
+
+#result{
+    align-self: center;
+    border: 3px solid lavender;
+    background-color: orange;
+    padding: 25px 100px;
+    font-size: 36px;
+}
