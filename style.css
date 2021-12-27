@@ -1,7 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 35px;
     background-color:darksalmon;
     color:darkred;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -21,12 +21,12 @@ header{
 .player, .CPU, .r, .p, .s{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
     border: 1px solid lavender;
     align-items: center;
     font-size: 36px;
     font-weight: bold;
-    padding: 50px 100px;
+    padding: 0 75px;
     position:relative;
     background-color: orange;
 }
